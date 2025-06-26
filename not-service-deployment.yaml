@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: not-service-app
-        image: localhost:5010/not-service-docker:latest
+#        image: localhost:5010/not-service-docker:latest
+        image: not-service-docker:latest
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8089
