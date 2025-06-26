@@ -18,6 +18,7 @@ spec:
       containers:
       - name: spanner-db
         image: gcr.io/cloud-spanner-emulator/emulator
+#        image: localhost:5010/spanner-local:latest
         ports:
         - containerPort: 9010 # Default gRPC port for Spanner emulator
         - containerPort: 9020 # Default HTTP REST port for Spanner emulator
