@@ -6,9 +6,9 @@ metadata:
 spec:
     project: default
     source:
-        repoURL: https://github.com/pgichevski/local-k3d
+        repoURL: git@github.com:pgichevski/local-k3d.git
         targetRevision: HEAD
-        path: local-k3d
+        path: .
     destination:
         server: https://kubernetes.default.svc
         namespace: default
