@@ -1,0 +1,16 @@
+# spring-boot-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-app-service
+  labels:
+    app: spring-boot-app
+spec:
+  selector:
+    app: spring-boot-app
+  ports:
+    - protocol: TCP
+      port: 8080 # Service port
+      targetPort: 8080 # Pod port
+      name: http
+  type: ClusterIP # Or NodePort if you prefer explicit node port exposure

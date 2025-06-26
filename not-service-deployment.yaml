@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: not-service
+  labels:
+    app: not-service
+spec:
+  replicas: 1 # You can adjust this based on your needs
+  selector:
+    matchLabels:
+      app: not-service-app
+  template:
+    metadata:
+      labels:
+        app: not-service-app
+    spec:
+      containers:
+      - name: not-service-app
+        image: not-service-docker:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8089
+        env:
+          - name: GOOGLE_APPLICATION_CREDENTIALS
+            value: /etc/gcp/key.json
+        volumeMounts:
+          - name: google-application-credentials-volume
+            mountPath: /etc/gcp
+            readOnly: true
+      volumes:
+        - name: google-application-credentials-volume
+          secret:
+            secretName: google-application-credentials
+
+        # No 'env' section here for Spanner connection, as it's assumed to be in application.properties
+        # If your application still needs other environment variables (e.g., non-Spanner specific ones),
+        # you would add them here.
+        # Optional: Add resource limits if you know the requirements
+        # resources:
+        #   requests:
+        #     memory: "512Mi"
+        #     cpu: "500m"
+        #   limits:
+        #     memory: "1Gi"
+        #     cpu: "1000m"
