@@ -5,7 +5,7 @@ metadata:
   labels:
     app: not-service
 spec:
-  replicas: 1 # You can adjust this based on your needs
+  replicas: 2 # You can adjust this based on your needs
   selector:
     matchLabels:
       app: not-service-app
