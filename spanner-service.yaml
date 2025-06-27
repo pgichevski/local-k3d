@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: spanner-db
+  name: spanner-db-svc
   labels:
-    app: spanner-db
+    app: spanner-db-svc
 spec:
   selector:
     app: spanner-db # Selects pods with the label 'app: spanner-db'

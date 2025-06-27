@@ -1,22 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: not-service
+  name: notification-service-deployment
   labels:
-    app: not-service
+    app: notification-service-deployment
 spec:
-  replicas: 4 # You can adjust this based on your needs
+  replicas: 1 # You can adjust this based on your needs
   selector:
     matchLabels:
-      app: not-service-app
+      app: notification-service
   template:
     metadata:
       labels:
-        app: not-service-app
+        app: notification-service
     spec:
       containers:
-      - name: not-service-app
-#        image: localhost:5010/not-service-docker:latest
+      - name: notification-service-container
         image: not-service-docker:latest
         imagePullPolicy: IfNotPresent
         ports:

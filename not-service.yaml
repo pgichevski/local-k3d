@@ -1,16 +1,15 @@
-# spring-boot-service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-boot-app-service
+  name: notification-service-svc
   labels:
-    app: spring-boot-app
+    app: notification-service-svc
 spec:
   selector:
-    app: spring-boot-app
+    app: notification-service
   ports:
     - protocol: TCP
-      port: 8080 # Service port
-      targetPort: 8080 # Pod port
+      port: 8089 # Service port
+      targetPort: 8089 # Pod port
       name: http
   type: ClusterIP # Or NodePort if you prefer explicit node port exposure

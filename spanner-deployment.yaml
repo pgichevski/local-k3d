@@ -16,7 +16,7 @@ spec:
         app: spanner-db
     spec:
       containers:
-      - name: spanner-db
+      - name: spanner-db-container
         image: gcr.io/cloud-spanner-emulator/emulator
 #        image: localhost:5010/spanner-local:latest
         ports:

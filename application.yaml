@@ -6,7 +6,7 @@ metadata:
 spec:
     project: default
     source:
-        repoURL: git@github.com:pgichevski/local-k3d.git
+        repoURL: https://github.com/pgichevski/local-k3d
         targetRevision: HEAD
         path: .
     destination:
