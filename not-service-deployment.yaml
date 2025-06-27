@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: notification-service-deployment
+  name: notification-service
   labels:
-    app: notification-service-deployment
+    app: notification-service
 spec:
   replicas: 1 # You can adjust this based on your needs
   selector:
