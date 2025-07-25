@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: notification-service-container
-        image: local-not-service-v5:latest
+        image: not-service-docker:latest
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8089
