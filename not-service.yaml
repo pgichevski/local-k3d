@@ -9,7 +9,7 @@ spec:
     app: notification-service
   ports:
     - protocol: TCP
-      port: 8089 # Service port
+      port: 80 # Service port
       targetPort: 8089 # Pod port
       name: http
   type: ClusterIP # Or NodePort if you prefer explicit node port exposure
