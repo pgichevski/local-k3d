@@ -37,7 +37,7 @@ Verify the deployment:
 1. Check the ingress resource to ensure it is created and has the correct rules
 2. Verify the ingress controller is running and the service is created:
     ```bash
-    kubectl get pods -n ingress-nginx
-    kubectl get svc -n ingress-nginx
+    kubectl get pods -n <your namespace>
+    kubectl get svc -n <your namespace>
     ```
 3. Obtain the external IP of the ingress controller service and try to access the app by using it.
