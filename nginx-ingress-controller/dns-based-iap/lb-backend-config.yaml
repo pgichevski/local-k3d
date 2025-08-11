@@ -1,0 +1,14 @@
+#this is backend config for the load balancer
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: iap-backendconfig
+  namespace: pavel-ingress-controller
+spec:
+  iap:
+    enabled: true
+    oauthclientCredentials:
+      secretName: iap-oauth-secret #Assuming the secret is created in the same namespace as the BackendConfig
+  healthCheck:
+    requestPath: /
+    port: 443

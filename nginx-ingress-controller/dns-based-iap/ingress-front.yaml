@@ -1,0 +1,23 @@
+#exposes internal ingress controller via a NEG-enabled service
+apiVersion: v1
+kind: Service
+metadata:
+  name: ingress-front
+  namespace: pavel-ingress-controller
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}'
+    cloud.google.com/app-protocols: '{"https":"HTTPS"}'
+    cloud.google.com/backend-config: '{"default": "iap-backendconfig"}'
+#    beta.cloud.google.com/backend-config: '{"default": "iap-ingress"}'
+spec:
+  type: ClusterIP #was NodePort
+  selector:
+    app: nginx-ingress
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+    - name: https
+      port: 443
+      targetPort: 443
+

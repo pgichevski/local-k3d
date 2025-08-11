@@ -1,0 +1,8 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: pavelg-ddns-net-cert
+  namespace: pavel-ingress-controller
+spec:
+  domains:
+    - pavelg.ddns.net

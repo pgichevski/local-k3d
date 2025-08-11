@@ -1,0 +1,11 @@
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+  name: lb-frontend-config
+  namespace: pavel-ingress-controller
+spec:
+  redirectToHttps:
+    enabled: true
+    responseCodeName: MOVED_PERMANENTLY_DEFAULT
+#  sslPolicy:
+#    name: my-ssl-policy  # optional if you want to associate an SSL policy
